@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { countries } from "../../public/countries";
-import axios from "axios";
 import { useDispatch } from "react-redux";
 import {
   setCloudCoverageState,
@@ -18,6 +17,8 @@ import {
 import { AppDispatch } from "@/store/store";
 import { useAppSelector } from "@/store/store";
 import Loader from "./Loader";
+import axios from "../api/httpsagent";
+
 const CountryDropdown: React.FC = () => {
   const [countrycode, setcountrycode] = useState<string>("AF");
   const [citieslist, setcitieslist] = useState<string[]>([]);
@@ -38,8 +39,7 @@ const CountryDropdown: React.FC = () => {
     dispatch(setDataLoader(true));
     try {
       const response = await axios.get(
-        "https://cors-anywhere.herokuapp.com/" +
-          `https://api.geonames.org/searchJSON?q=${cityname}&maxRows=1&username=mamoro`
+        `http://api.geonames.org/searchJSON?q=${cityname}&maxRows=1&username=mamoro`
       );
       const citydata: string[] =
         response.data?.geonames?.map((city: any) => [city.lat, city.lng]) ?? [];
@@ -79,8 +79,7 @@ const CountryDropdown: React.FC = () => {
 
     try {
       const response = await axios.get(
-        "https://cors-anywhere.herokuapp.com/" +
-          `https://api.geonames.org/searchJSON?country=${countryCode}&username=mamoro`
+        `http://api.geonames.org/searchJSON?country=${countryCode}&username=mamoro`
       );
       const cityList: string[] =
         response.data?.geonames?.map((city: any) => city.name) ?? [];
