@@ -38,8 +38,7 @@ const CountryDropdown: React.FC = () => {
     dispatch(setDataLoader(true));
     try {
       const response = await axios.get(
-        "https://cors-anywhere.herokuapp.com/" +
-          `https://api.geonames.org/searchJSON?q=${cityname}&maxRows=1&username=mamoro`
+        `https://api.geonames.org/searchJSON?q=${cityname}&maxRows=1&username=mamoro`
       );
       const citydata: string[] =
         response.data?.geonames?.map((city: any) => [city.lat, city.lng]) ?? [];
