@@ -45,6 +45,7 @@ const MainPart = () => {
         text-2xl
         tracking-widest
         mt-[2em]
+        text-center
         
         
         "
@@ -54,7 +55,7 @@ const MainPart = () => {
       ) : dataloader ? (
         <Loader classname="inline w-16 h-16 mr-2 mt-20 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" />
       ) : (
-        <div className=" flex flex-col  sm:flex-row w-full justify-evenly items-center h-[92vh] sm:h-full">
+        <div className=" flex flex-col  sm:flex-row w-full justify-evenly items-center mt-[5em] h-[92vh] sm:h-full">
           <Card
             title="Yesterday"
             maxTemp={datas[0].maxTemp[0]}

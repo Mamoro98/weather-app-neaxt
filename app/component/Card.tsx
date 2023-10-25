@@ -107,60 +107,89 @@ const Card: React.FC<CardProps> = ({
       ? cloudy
       : rainy;
 
-  const iconStyle =
-    weatherCategory == "rainy"
-      ? "absolute top-[6%] right-[19%] w-[5em] sm:top-[3em] sm:right-[4em] sm:w-[6em] "
-      : "absolute     top-[0%] right-[13%]   w-[8.125em] sm:top-[2em] sm:right-[3em]  sm:w-[8.125em]";
+  const cardStyle = `
+      w-full 
+      h-[50%] 
+      items-center 
+      relative 
+      flex 
+      flex-col 
+      mt-10     
+      
+    `;
+
+  const containerStyle = `
+      w-[80%] 
+      h-[32vh] 
+      bg-[#24353E] 
+      rounded-lg 
+      flex 
+      flex-col  
+      justify-end 
+    `;
+
+  const titleStyle = `
+
+      ${weatherCategory !== "unknown" && "mt-0"}
+    `;
+
+  const timeStyle = `
+
+      mt-2
+    `;
+
+  const windspeedStyle = `
+      mt-4
+    `;
+
+  const tempStyle = `
+ 
+      w-full
+      mt-2
+    `;
+
+  const weatherCategoryStyle = `
+      text-white 
+      w-full
+      ${weatherCategory !== "unknown" && "w-28"}
+    `;
+
+  const iconStyle = `
+      absolute top-[-22%] right-[5%] sm:top-[-22%] sm:right-[-3%] w-[30%] sm:w-[50%]
+    `;
+  const textStyles = `
+     flex flex-col text-[15px] text-white text-left ml-[10%] mb-[5%]
+    `;
+
   return (
-    <div className="flex flex-col relative w-full h-[20rem] items-center">
-      <Image
-        className={iconStyle}
-        src={src}
-        alt="image"
-        width={100}
-        height={100}
-      />
-
-      <div className="w-[10em] h-[10em] sm:w-[15em] sm:h-[15rem] bg-[#24353E] rounded-lg flex flex-col  sm:justify-end sm:pl-10 sm:pb-10  place-content-between sm:mt-[4em] mt-12">
-        <div className="w-full flex flex-col mt-[2em] sm:mt-0 items-center text-center sm:items-start ">
-          <span className="text-sm sm:text-xl text-white sm:text-left sm:mt-0 text-center ">
-            {title}
-          </span>
-          <span className="text-sm sm:text-xl text-white text-center sm:text-left sm:mt-2">
-            {time}
-          </span>
-          <span className="text-sm sm:text-xl text-white text-center sm:text-left sm:mt-4">
-            Wind Speed : {windspeed}
-          </span>
-          <span className="text-sm text-white text-center sm:text-left sm:mt-4">
-            Temp: {maxTemp} &deg;C - {minTemp} &deg;C
-          </span>
-          <span className="text-sm text-white text-center sm:text-left w-28 sm:mt-2">
-            {weatherCategory}
-          </span>
+    <div className={cardStyle}>
+      <div className={containerStyle}>
+        <Image
+          className={iconStyle}
+          src={src}
+          alt="image"
+          width={100}
+          height={100}
+        />
+        <div className={textStyles}>
+          <div className={titleStyle}>
+            <span>{title}</span>
+          </div>
+          <div className={timeStyle}>
+            <span>{time}</span>
+          </div>
+          <div className={windspeedStyle}>
+            <span>Wind Speed: {windspeed}</span>
+          </div>
+          <div className={tempStyle}>
+            <span>
+              Temp: {maxTemp} &deg;C - {minTemp} &deg;C
+            </span>
+          </div>
+          <div className={weatherCategoryStyle}>
+            <span>{weatherCodes[`${weathercode}`]}</span>
+          </div>
         </div>
-
-        {/* {maxTemp}
-        <br />
-        {minTemp}
-        <br />
-
-        {sunrise}
-        <br />
-
-        {sunset}
-        <br />
-
-        {time}
-        <br />
-
-        {cloudcoverage}
-        <br />
-
-        {windspeed}
-        <br />
-
-        {weatherCodes[`${weathercode}`]} */}
       </div>
     </div>
   );
