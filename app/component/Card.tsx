@@ -109,10 +109,10 @@ const Card: React.FC<CardProps> = ({
 
   const iconStyle =
     weatherCategory == "rainy"
-      ? "absolute top-[3em] right-[4em] w-[6em] "
-      : "absolute top-[2em] right-[3em] text-black w-[8.125em]";
+      ? "absolute top-[1em] right-[8em] w-[6em] sm:top-[3em] sm:right-[4em] sm:w-[6em] "
+      : "absolute top-[0em] right-[7em]  w-[8.125em] sm:top-[2em] sm:right-[3em]  sm:w-[8.125em]";
   return (
-    <div className="flex flex-col relative w-[20em] h-[20rem]">
+    <div className="flex flex-col relative w-full h-[20rem] items-center">
       <Image
         className={iconStyle}
         src={src}
@@ -121,18 +121,24 @@ const Card: React.FC<CardProps> = ({
         height={100}
       />
 
-      <div className="w-[15em] h-[15rem] bg-[#24353E] rounded-lg flex flex-col justify-end pl-10 pb-10  place-content-between mt-[4em]">
-        <span className="text-xl text-white text-left">{title}</span>
-        <span className="text-xl text-white text-left mt-2">{time}</span>
-        <span className="text-sm text-white text-left mt-4">
-          Wind Speed : {windspeed}
-        </span>
-        <span className="text-sm text-white text-left mt-4">
-          Temp: {maxTemp} &deg;C - {minTemp} &deg;C
-        </span>
-        <span className="text-sm text-white text-left w-28 mt-2">
-          {weatherCategory}
-        </span>
+      <div className="w-[10em] h-[10em] sm:w-[15em] sm:h-[15rem] bg-[#24353E] rounded-lg flex flex-col  sm:justify-end sm:pl-10 sm:pb-10  place-content-between sm:mt-[4em] mt-12">
+        <div className="w-full flex flex-col mt-[2em] sm:mt-0 items-center text-center sm:items-start ">
+          <span className="text-sm sm:text-xl text-white sm:text-left sm:mt-0 text-center ">
+            {title}
+          </span>
+          <span className="text-sm sm:text-xl text-white text-center sm:text-left sm:mt-2">
+            {time}
+          </span>
+          <span className="text-sm sm:text-xl text-white text-center sm:text-left sm:mt-4">
+            Wind Speed : {windspeed}
+          </span>
+          <span className="text-sm text-white text-center sm:text-left sm:mt-4">
+            Temp: {maxTemp} &deg;C - {minTemp} &deg;C
+          </span>
+          <span className="text-sm text-white text-center sm:text-left w-28 sm:mt-2">
+            {weatherCategory}
+          </span>
+        </div>
 
         {/* {maxTemp}
         <br />

@@ -14,7 +14,7 @@ const poppins = Poppins({
 export default function Home() {
   return (
     <main className={poppins.className}>
-      <div className="w-full h-[100vh] bg-cover bg-center p-10 ">
+      <div className="w-full h-fit bg-cover bg-center p-10 ">
         <Header />
         <Hero />
         <Search />
