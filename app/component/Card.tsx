@@ -109,8 +109,8 @@ const Card: React.FC<CardProps> = ({
 
   const iconStyle =
     weatherCategory == "rainy"
-      ? "absolute top-[1em] right-[8em] w-[6em] sm:top-[3em] sm:right-[4em] sm:w-[6em] "
-      : "absolute top-[0em] right-[7em]  w-[8.125em] sm:top-[2em] sm:right-[3em]  sm:w-[8.125em]";
+      ? "absolute top-[6%] right-[19%] w-[5em] sm:top-[3em] sm:right-[4em] sm:w-[6em] "
+      : "absolute     top-[0%] right-[13%]   w-[8.125em] sm:top-[2em] sm:right-[3em]  sm:w-[8.125em]";
   return (
     <div className="flex flex-col relative w-full h-[20rem] items-center">
       <Image

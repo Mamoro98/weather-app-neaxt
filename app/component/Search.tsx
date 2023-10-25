@@ -103,7 +103,7 @@ const CountryDropdown: React.FC = () => {
   return (
     <div className="flex flex-col mt-0 items-center w-[100%] sm:w-full sm:flex-row justify-between">
       <select
-        className="border rounded py-2 px-3 text-black"
+        className="border rounded py-2 px-3 text-black w-[80%] sm:w-[30%]"
         onChange={handleCountryChange}
       >
         {countries.map((country) => (
@@ -117,10 +117,10 @@ const CountryDropdown: React.FC = () => {
         ))}
       </select>
       {loading ? (
-        <Loader classname="inline w-12 h-12 mr-28 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" />
+        <Loader classname="inline w-12 sm:w-full mt-5 sm:mt-0 h-12  text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" />
       ) : (
         <select
-          className="border rounded py-2 px-3 text-black mt-6 sm:mt-0"
+          className="border rounded py-2 px-3 text-black mt-6 sm:mt-0 w-[80%] sm:w-[30%]"
           onChange={handleCityChange}
         >
           {citieslist.map((city, index) => (

@@ -8,7 +8,7 @@ const Hero = () => {
       </div>
       <div className="mt-2 sm:mt-6">
         with{" "}
-        <span className="text-5xl bg-gradient-to-r from-[#CAECFF] to-[#78CFFF] text-transparent bg-clip-text">
+        <span className="text-4xl sm:text-5xl bg-gradient-to-r from-[#CAECFF] to-[#78CFFF] text-transparent bg-clip-text">
           Moro Weather
         </span>
       </div>
