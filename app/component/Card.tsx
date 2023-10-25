@@ -155,7 +155,7 @@ const Card: React.FC<CardProps> = ({
     `;
 
   const iconStyle = `
-      absolute top-[-22%] right-[5%] sm:top-[-22%] sm:right-[-3%] w-[30%] sm:w-[50%]
+      absolute top-[-22%] right-[5%] sm:top-[-22%] sm:right-[-3%] w-[55%] sm:w-[50%]
     `;
   const textStyles = `
      flex flex-col text-[15px] text-white text-left ml-[10%] mb-[5%]
