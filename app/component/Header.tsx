@@ -13,7 +13,7 @@ const Header = () => {
               Home
             </h2>
           </a>
-          <a href="morosama.vercel.app">
+          <a href="https://morosama.vercel.app">
             <h2 className="text-3xl sm:mt-0 mt-6 sm:text-xl text-slate-200 cursor-pointer font-extralight">
               Contact US
             </h2>
